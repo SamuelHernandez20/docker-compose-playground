@@ -2,9 +2,10 @@ version: '3'
 
 services:
   wordpress:
-    image: wordpress
-    ports:
-      - 80:80
+    image: bitnami/wordpress # <-- bajarlo de bitnami para agregarle mas variables de conf al wordpress. 
+    ports: 
+      - 80:8080 # <-- se consulta en dockerhub como funciona con bitnami
+      - 443:8443
     environment: 
       - WORDPRESS_DB_HOST=mysql
       - WORDPRESS_DB_NAME=${WORDPRESS_DB_NAME}
